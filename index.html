@@ -174,9 +174,21 @@ setInterval(() => {
 }, 500);
 
 /* Music */
+<button onclick="toggleMusic()" id="musicBtn" style="background: #645394; color: white; border: none; padding: 10px 20px; border-radius: 20px; cursor: pointer; margin-bottom: 20px;">
+    🎵 Play Our Song
+</button>
+
+<script>
 function toggleMusic() {
     const m = document.getElementById("music");
-    m.paused ? m.play() : m.pause();
+    const btn = document.getElementById("musicBtn");
+    if (m.paused) {
+        m.play();
+        btn.innerHTML = "⏸ Pause Music";
+    } else {
+        m.pause();
+        btn.innerHTML = "🎵 Play Music";
+    }
 }
 </script>
 
