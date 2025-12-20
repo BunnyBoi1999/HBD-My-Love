@@ -74,7 +74,11 @@ h2 {
   line-height: 1.8;
   border-left: 6px solid #ff9ad5;
   font-size: 18px;
+
+  max-height: 260px;   /* 👈 ADD THIS */
+  overflow-y: auto;    /* 👈 ADD THIS */
 }
+
 
 /* Signature */
 .signature {
@@ -146,12 +150,17 @@ this day officially belongs to you (and thoda sa to me too 🥺). Also… thoda 
 Because someone is coming with your gifts on 23 Jan 💜🎂✨`;
 let i = 0;
 function typeWriter() {
+  const box = document.getElementById("typeText");
+
   if (i < text.length) {
-    document.getElementById("typeText").textContent += text.charAt(i);
+    box.textContent += text.charAt(i);
     i++;
+
+    box.scrollTop = box.scrollHeight; // 👈 keeps scroll smooth
     setTimeout(typeWriter, 30);
   }
 }
+
 window.onload = typeWriter;
 
 /* Floating Hearts */
