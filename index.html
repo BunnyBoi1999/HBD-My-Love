@@ -125,16 +125,22 @@ h2 {
 
     <div class="message" id="typeText"></div>
 
-    <div class="signature">
-        I Love You So Much ❤️🥰😘<br>
-        Your Bunny.
-    </div>
+<div class="signature">
+  I Love You So Much ❤️🥰😘<br>
+  Your Bunny.
 </div>
 
+<style>
+.message {
+  white-space: pre-wrap;
+  color: #fff;
+  font-size: 18px;
+  line-height: 1.6;
+}
+</style>
+
 <script>
-/* Typewriter Text */
-const text = `
-Hey birthday girl 🎂💜
+const text = `Hey birthday girl 🎂💜
 Manyyy many happy returns of the day, my love 🥰
 
 I know I’m not right next to you at this moment, but trust me, my heart is doing full-on bhangra just for you today 😌💃
@@ -148,20 +154,20 @@ Jisse main pyaar karna chahta hoon, protect karna chahta hoon, aur har din thoda
 So madam ji, apni khursi ki peti band lijiye, mera haath pakad kr, iss beautiful journey ko fully enjoy kijiye , especially aaj, because this day officially belongs to you (and thoda sa to me too 🥺).
 
 Also… thoda excited rehna, okay? 🎁😉
-Because someone is coming with your gifts on 23 Jan .
-`;
+Because someone is coming with your gifts on 23 Jan .`;
 
 let i = 0;
 function typeWriter() {
   if (i < text.length) {
-    document.getElementById("typeText").innerHTML += text.charAt(i);
+    document.getElementById("typeText").textContent += text.charAt(i);
     i++;
     setTimeout(typeWriter, 30);
   }
 }
 
-// This triggers the animation once the page is ready
 window.onload = typeWriter;
+</script>
+
 /* Hearts */
 setInterval(() => {
     const heart = document.createElement("div");
