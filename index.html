@@ -153,14 +153,15 @@ Because someone is coming with your gifts on 23 Jan .
 
 let i = 0;
 function typeWriter() {
-    if (i < text.length) {
-        document.getElementById("typeText").innerHTML += text.charAt(i);
-        i++;
-        setTimeout(typeWriter, 30);
-    }
+  if (i < text.length) {
+    document.getElementById("typeText").innerHTML += text.charAt(i);
+    i++;
+    setTimeout(typeWriter, 30);
+  }
 }
-typeWriter();
 
+// This triggers the animation once the page is ready
+window.onload = typeWriter;
 /* Hearts */
 setInterval(() => {
     const heart = document.createElement("div");
